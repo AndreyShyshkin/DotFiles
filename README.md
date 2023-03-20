@@ -12,9 +12,9 @@ plugins: ['hyper-dracula'],
 ```
 
 ## Completed settings
-[Hyper](https://github.com/AndreyShyshkin/DotFiles/blob/master/.hyper.js)
-[zsh](https://github.com/AndreyShyshkin/DotFiles/blob/master/.zshrc)
-[tmux](https://github.com/AndreyShyshkin/DotFiles/blob/master/.tmux.conf)
+[Hyper](https://github.com/AndreyShyshkin/DotFiles/blob/master/.hyper.js) </br>
+[zsh](https://github.com/AndreyShyshkin/DotFiles/blob/master/.zshrc) </br>
+[tmux](https://github.com/AndreyShyshkin/DotFiles/blob/master/.tmux.conf) </br>
 
 ## Setup to Linux Ubuntu
 ## Start 
