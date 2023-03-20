@@ -11,8 +11,12 @@ Settings Hyper Theme:
 plugins: ['hyper-dracula'],
 ```
 
-## Setup to Linux Ubuntu
+## Completed settings
+[Hyper](https://github.com/AndreyShyshkin/DotFiles/blob/master/.hyper.js)
+[zsh](https://github.com/AndreyShyshkin/DotFiles/blob/master/.zshrc)
+[tmux](https://github.com/AndreyShyshkin/DotFiles/blob/master/.tmux.conf)
 
+## Setup to Linux Ubuntu
 ## Start 
 
 Install Homebrew
