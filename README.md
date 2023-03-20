@@ -11,9 +11,9 @@ Settings Hyper Theme:
 plugins: ['hyper-dracula'],
 ```
 
-**Setup to Linux Ubuntu
+##Setup to Linux Ubuntu
 
-**Start 
+##Start 
 
 Install Homebrew
 ```bash
