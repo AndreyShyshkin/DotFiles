@@ -14,7 +14,9 @@ setup to Linux Ubuntu
 start 
 
 Install Homebrew
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 Add Homebrew To Path
 test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
