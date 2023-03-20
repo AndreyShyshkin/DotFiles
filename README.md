@@ -6,14 +6,14 @@ Before starting a little instruction how I have configured my working environmen
 The terminal I use is Hyper, why it's one of the reasons is that it's fast and cross-platform.
 On the remote server I use zsh, tmux, nvim
 
-settings Hyper Theme:
+Settings Hyper Theme:
 ```bash
 plugins: ['hyper-dracula'],
 ```
 
-setup to Linux Ubuntu
+**Setup to Linux Ubuntu
 
-start 
+**Start 
 
 Install Homebrew
 ```bash
@@ -28,7 +28,7 @@ test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"
 echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 ```
 
-add to "~/.zshrc"
+Add to "~/.zshrc"
 ```bash
 export BREW_HOME="/home/linuxbrew/.linuxbrew/bin"
 export PATH="$PATH:$BREW_HOME"
@@ -62,7 +62,7 @@ source ~/.zshrc
 Install Meslo Nerd Font
 Install the font by pressing "y"
 
-add fonts to hyper 
+Add fonts to hyper 
 ```bash
 fontFamily: 'MesloLGS NF,
 ```
