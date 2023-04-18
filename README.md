@@ -32,15 +32,9 @@ test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"
 echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 ```
 
-Add to "~/.zshrc"
+Install Zsh
 ```bash
-export BREW_HOME="/home/linuxbrew/.linuxbrew/bin"
-export PATH="$PATH:$BREW_HOME"
-```
-
-Install Git
-```bash
-brew install git
+brew install zsh
 ```
 
 Install Oh My Zsh
