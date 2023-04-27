@@ -1,32 +1,36 @@
-FROM ubuntu
+FROM fedora
 
-# Установить пакеты
-RUN apt-get update && apt-get install -y \
-    zsh \
-    neovim \
-    tmux \
-    openssh-server \
-    git \
-    curl \
-    wget
+# Установка zsh, NVIM, tmux
+RUN dnf update -y && \
+    dnf install -y zsh neovim tmux && \
+    dnf clean all
 
-# Настроить ssh
-RUN mkdir /var/run/sshd
-RUN echo 'root:password' | chpasswd
-RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
-RUN echo "export VISIBLE=now" >> /etc/profile
+# Настройка доступа по SSH
+RUN dnf -y install openssh-server && \
+    ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key && \
+    ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key && \
+    ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key && \
+    mkdir /var/run/sshd && \
+    echo 'root:password' | chpasswd && \
+    sed -i 's/^#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    sed -i 's/^#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
+    sed -i 's/^#UsePAM yes/UsePAM no/' /etc/ssh/sshd_config && \
+    echo "export VISIBLE=now" >> /etc/profile
 
-# Удалить .zshrc файл и скачать файл из GitHub
-RUN rm -f ~/.zshrc
-RUN curl -o ~/.zshrc https://raw.githubusercontent.com/AndreyShyshkin/DotFiles/master/.zshrc
+# Установка темы PowerLevel10K и плагинов для zsh
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && \
+    git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k && \
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && \
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
+    sed -i 's/^ZSH_THEME="robbyrussell"/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc && \
+    sed -i 's/^plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
 
-# Установить тему и плагины для zsh
-RUN git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# Настройка окружения
+RUN echo 'alias vi="nvim"' >> ~/.zshrc && \
+    echo 'alias vim="nvim"' >> ~/.zshrc
 
-# Установить Oh My Zsh
-RUN sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Открытие порта для SSH
+EXPOSE 22
 
-# Запустить ssh
+# Запуск SSH сервера
 CMD ["/usr/sbin/sshd", "-D"]
