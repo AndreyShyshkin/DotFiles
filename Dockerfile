@@ -6,7 +6,11 @@ RUN apt-get update && apt-get upgrade -y
 # Установка Homebrew
 RUN apt-get install -y curl git
 RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-RUN test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)" && test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
+RUN test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)" 
+RUN test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" 
+RUN test -r ~/.bash_profile 
+RUN echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile 
+RUN echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
 ENV PATH="/home/linuxbrew/.linuxbrew/bin:${PATH}"
 
 # Установка zsh и необходимых тем и плагинов
