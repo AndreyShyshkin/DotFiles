@@ -1,13 +1,32 @@
 FROM ubuntu
 
-# Обновление пакетов Ubuntu
-RUN apt-get update && apt-get upgrade -y
+# Установить пакеты
+RUN apt-get update && apt-get install -y \
+    zsh \
+    neovim \
+    tmux \
+    openssh-server \
+    git \
+    curl \
+    wget
 
-RUN apt-get install -y curl git zsh neovim
+# Настроить ssh
+RUN mkdir /var/run/sshd
+RUN echo 'root:password' | chpasswd
+RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+RUN echo "export VISIBLE=now" >> /etc/profile
+
+# Удалить .zshrc файл и скачать файл из GitHub
+RUN rm -f ~/.zshrc
+RUN curl -o ~/.zshrc https://raw.githubusercontent.com/AndreyShyshkin/DotFiles/master/.zshrc
+
+# Установить тему и плагины для zsh
 RUN git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-RUN sed -i 's/ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
-RUN sed -i 's/plugins=.*/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
 
-CMD ["zsh"]
+# Установить Oh My Zsh
+RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# Запустить ssh
+CMD ["/usr/sbin/sshd", "-D"]
