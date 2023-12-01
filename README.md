@@ -1,4 +1,56 @@
 # DotFiles
+
+Before starting
+
+sudo apt upadte
+sudo apt upgrade
+
+sudo test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+sudo test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+sudo echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
+
+brew install zsh
+
+Install Zsh
+```bash
+brew install zsh
+```
+
+Install Oh My Zsh
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Install PowerLevel10K Theme for Oh My Zsh
+```bash
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+```
+
+Now that it's installed, open the "~/.zshrc" file with your preferred editor and change the value of "ZSH_THEME" as shown below:
+```bash
+ZSH_THEME="powerlevel10k/powerlevel10k"
+```
+
+To reflect this change on your terminal, restart it or run this command
+```bash
+source ~/.zshrc
+```
+brew install npm
+brew install python3
+pip3 install virtualenv virtualenvwrapper
+sudo apt-get update && sudo apt-get install build-essential
+
+
+
+
+
+
+
+
+
+
+
+
 Before starting a little instruction how I have configured my working environment: 
   All my development goes on a remote Ubuntu server (you can use any service that provides you to connect to it via ssh) I use a remote server for several reasons, the main is access to development from any point where there is an Internet and always infused and ready for a robot environment on any device.
 
