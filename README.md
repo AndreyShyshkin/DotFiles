@@ -1,15 +1,18 @@
 # DotFiles
 
 Before starting
-
-sudo apt upadte
-sudo apt upgrade
-
+```bash
+sudo apt upadate && sudo apt upgrade
+sudo apt-get install build-essential curl file git
+```
+```bash
 sudo test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 sudo test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
-
+```
+```bash
 brew install zsh
+```
 
 Install Zsh
 ```bash
@@ -35,10 +38,12 @@ To reflect this change on your terminal, restart it or run this command
 ```bash
 source ~/.zshrc
 ```
+```bash
 brew install npm
 brew install python3
 pip3 install virtualenv virtualenvwrapper
-sudo apt-get update && sudo apt-get install build-essential
+```
+
 
 
 
