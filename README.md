@@ -1,11 +1,11 @@
 # DotFiles
 
-! If you are using Windows, use wsl 2.
+! If you are using Windows, use wsl 2. </br>
 
-to use wsl 2 
-first go to windows components and activate the Linux for Windows subsystem.
-To check the version use the command wsl --set-version, if you see 1 then you need to write wsl --set-version 2.
-After these procedures you will be able to download any repository from the Microsoft store.
+to use wsl 2 </br>
+first go to windows components and activate the Linux for Windows subsystem. </br>
+To check the version use the command wsl --set-version, if you see 1 then you need to write wsl --set-version 2. </br>
+After these procedures you will be able to download any repository from the Microsoft store. </br>
 
 
 ##Initial setup
