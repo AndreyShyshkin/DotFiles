@@ -67,10 +67,6 @@ Load these new plugins by running:
 source ~/.zshrc
 ```
 
-To reflect this change on your terminal, restart it or run this command
-```bash
-source ~/.zshrc
-```
 
 Setting dependencies for correct operationi
 ```bash
