@@ -1,19 +1,29 @@
 # DotFiles
 
-Before starting
+! If you are using Windows, use wsl 2.
+
+to use wsl 2 
+first go to windows components and activate the Linux for Windows subsystem.
+To check the version use the command wsl --set-version, if you see 1 then you need to write wsl --set-version 2.
+After these procedures you will be able to download any repository from the Microsoft store.
+
+
+##Initial setup
+
 ```bash
 sudo apt upadate && sudo apt upgrade
 sudo apt-get install build-essential procps curl file git
 ```
+
+##Installing Brew
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 sudo test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 sudo test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 ```
-```bash
-brew install gcc
-```
+
+##Installing and configuring zsh
 
 Install Zsh
 ```bash
@@ -33,94 +43,6 @@ git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerl
 Now that it's installed, open the "~/.zshrc" file with your preferred editor and change the value of "ZSH_THEME" as shown below:
 ```bash
 ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-To reflect this change on your terminal, restart it or run this command
-```bash
-source ~/.zshrc
-```
-```bash
-brew install npm
-brew install python3
-pip3 install virtualenv virtualenvwrapper
-```
-
-
-
-
-
-
-
-
-
-
-
-
-
-Before starting a little instruction how I have configured my working environment: 
-  All my development goes on a remote Ubuntu server (you can use any service that provides you to connect to it via ssh) I use a remote server for several reasons, the main is access to development from any point where there is an Internet and always infused and ready for a robot environment on any device.
-
-
-The terminal I use is Hyper, why it's one of the reasons is that it's fast and cross-platform.
-On the remote server I use zsh, tmux, nvim
-
-Settings Hyper Theme:
-```bash
-plugins: ['hyper-dracula'],
-```
-
-## Completed settings
-[Hyper](https://github.com/AndreyShyshkin/DotFiles/blob/master/.hyper.js) </br>
-[zsh](https://github.com/AndreyShyshkin/DotFiles/blob/master/.zshrc) </br>
-[tmux](https://github.com/AndreyShyshkin/DotFiles/blob/master/.tmux.conf) </br>
-
-## Setup to Linux Ubuntu
-## Start 
-
-Install Homebrew
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-Add Homebrew To Path
-```bash
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
-```
-
-Install Zsh
-```bash
-brew install zsh
-```
-
-Install Oh My Zsh
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Install PowerLevel10K Theme for Oh My Zsh
-```bash
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-```
-
-Now that it's installed, open the "~/.zshrc" file with your preferred editor and change the value of "ZSH_THEME" as shown below:
-```bash
-ZSH_THEME="powerlevel10k/powerlevel10k"
-```
-
-To reflect this change on your terminal, restart it or run this command
-```bash
-source ~/.zshrc
-```
-
-Install Meslo Nerd Font
-Install the font by pressing "y"
-
-Add fonts to hyper 
-```bash
-fontFamily: 'MesloLGS NF,
 ```
 
 Configure PowerLevel10K
@@ -144,3 +66,17 @@ Load these new plugins by running:
 ```bash
 source ~/.zshrc
 ```
+
+To reflect this change on your terminal, restart it or run this command
+```bash
+source ~/.zshrc
+```
+
+Setting dependencies for correct operationi
+```bash
+brew install gcc
+brew install npm
+brew install python3
+pip3 install virtualenv virtualenvwrapper
+```
+
