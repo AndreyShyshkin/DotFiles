@@ -11,7 +11,7 @@ After these procedures you will be able to download any repository from the Micr
 ##Initial setup
 
 ```bash
-sudo apt upadate && sudo apt upgrade
+sudo apt-get upadate -y && sudo apt-get upgrade -y
 sudo apt-get install build-essential procps curl file git
 ```
 
