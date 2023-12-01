@@ -3,7 +3,7 @@
 Before starting
 ```bash
 sudo apt upadate && sudo apt upgrade
-sudo apt-get install build-essential curl file git
+sudo apt-get install build-essential procps curl file git
 ```
 ```bash
 sudo test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
