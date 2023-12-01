@@ -76,3 +76,10 @@ brew install python3
 pip3 install virtualenv virtualenvwrapper
 ```
 
+#Install and setup nvim
+
+```bash
+brew install nvim
+git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
+```
+Say yes while install nvcad
