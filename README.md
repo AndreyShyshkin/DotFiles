@@ -6,12 +6,13 @@ sudo apt upadate && sudo apt upgrade
 sudo apt-get install build-essential procps curl file git
 ```
 ```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 sudo test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
 sudo test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 sudo echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 ```
 ```bash
-brew install zsh
+brew install gcc
 ```
 
 Install Zsh
