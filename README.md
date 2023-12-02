@@ -8,14 +8,14 @@ To check the version use the command wsl --set-version, if you see 1 then you ne
 After these procedures you will be able to download any repository from the Microsoft store. <br/>
 
 
-##Initial setup
+#Initial setup
 
 ```bash
 sudo apt-get update -y && sudo apt-get upgrade -y
 sudo apt-get install build-essential procps curl file git
 ```
 
-##Installing Brew
+#Installing Brew
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 sudo test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
@@ -23,7 +23,7 @@ sudo test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bi
 sudo echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 ```
 
-##Installing and configuring zsh
+#Installing and configuring zsh
 
 Install Zsh
 ```bash
