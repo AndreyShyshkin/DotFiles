@@ -20,6 +20,14 @@ cd YOURPATH
 ```
 
 For Windows path: `/mnt/YOURDISC/`
+If you have a home storage device, you need to In that case, we can mount them with the mount command. Run the following commands with sudo or the root user account. Remember to replace D: with whichever drive letter you’re trying to mount.
+```bash
+sudo mkdir /mnt/d 
+sudo mount -t drvfs D: /mnt/d 
+```
+as WSL may not mount these other drives automatically
+
+
 
 ## Initial setup
 
