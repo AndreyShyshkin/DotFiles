@@ -44,8 +44,7 @@ sudo vim /etc/fstab
 Add:
 
 ```bash
-[automount]
-YOURDISC/FOLDER: YOURPATH drvfs defaults 0 0
+F: /home/dev/DevDisc drvfs defaults 0 0
 ```
 
 ## Initial setup
