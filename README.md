@@ -26,7 +26,7 @@ If you have a home storage device, you need to In that case, we can mount them w
 
 ```bash
 sudo mkdir /mnt/d 
-sudo mount -t drvfs D: /mnt/d 
+sudo mount -t drvfs D: /mnt/d -o metadata
 ```
 
 as WSL may not mount these other drives automatically
