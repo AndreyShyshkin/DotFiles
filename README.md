@@ -22,16 +22,20 @@ cd YOURPATH
 For Windows path: `/mnt/YOURDISC/`. </br>
 
 
+Of course, you don’t you have to use the /mnt directory. You can mount the drives wherever you like as long you use Microsoft’s DrvFs as the filesystem type in your mount command. 
 If you have a home storage device, you need to In that case, we can mount them with the mount command. Run the following commands with sudo or the root user account. Remember to replace D: with whichever drive letter you’re trying to mount
 
 ```bash
-sudo mkdir /mnt/d 
-sudo mount -t drvfs D: /mnt/d -o metadata
+sudo mkdir YOURPATH
+sudo mount -t drvfs YOURDISC: YOURPATH -o metadata
 ```
 
 as WSL may not mount these other drives automatically
+If you need to unmount a drive, you can use the normal umount Linux command.
 
-
+```bash
+sudo umount YOURPATH
+```
 
 ## Initial setup
 
