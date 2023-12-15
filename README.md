@@ -19,7 +19,7 @@ Navigate to the end and add:
 cd YOURPATH
 ```
 
-For Windows path: `/mnt/YOURDISC/`. <br/>
+For Windows path: `/mnt/YOURDISC/`. </br>
 
 
 If you have a home storage device, you need to In that case, we can mount them with the mount command. Run the following commands with sudo or the root user account. Remember to replace D: with whichever drive letter you’re trying to mount
