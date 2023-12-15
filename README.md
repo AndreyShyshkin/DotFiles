@@ -123,3 +123,5 @@ git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
 
 During the installation of NvChad, answer "yes."
+
+Feel free to fork and adapt these dotfiles according to your preferences. Happy coding! 🚀
