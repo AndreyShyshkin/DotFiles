@@ -7,6 +7,21 @@ first go to windows components and activate the Linux for Windows subsystem. <br
 To check the version use the command wsl --set-version, if you see 1 then you need to write wsl --set-version 2. <br/>
 After these procedures you will be able to download any repository from the Microsoft store. <br/>
 
+*If you want to edit default directory you need 
+
+open .bashrc
+
+```bash
+vim .bashrc
+```
+
+and do to down and add 
+```bash
+cd YOURPATH
+```
+
+*win path /mtn/YOURDISC/
+
 
 #Initial setup
 
