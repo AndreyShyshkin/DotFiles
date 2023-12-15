@@ -1,51 +1,52 @@
 # DotFiles
 
-**Note:** If you are using Windows, make sure to use WSL 2.
+**Note:** If you are using Windows, ensure WSL 2 is set up.
 
 To enable WSL 2:
-1. Go to Windows components and activate the Linux for Windows subsystem.
-2. Check the WSL version using the command `wsl --set-version`. If the version is 1, use the command `wsl --set-version 2`.
-3. After these procedures, you will be able to download any repository from the Microsoft Store.
 
-If you want to edit the default directory, open `.bashrc`:
+1. Go to Windows components and activate the Linux for Windows subsystem.
+2. Check the WSL version using `wsl --set-version`. If it's 1, use `wsl --set-version 2`.
+3. After these steps, download any repository from the Microsoft Store.
+
+To customize the default directory, open `.bashrc`:
 
 ```bash
 vim .bashrc
 ```
 
-Navigate to the end and add:
+Go to the end and add:
 
 ```bash
 cd YOURPATH
 ```
 
-For Windows path: `/mnt/YOURDISC/`. </br>
+For Windows path: `/mnt/YOURDISC/`.
 
-
-Or if you want to conect your win disc/folder 
+Alternatively, to connect your Windows disk/folder:
 
 ```bash
 sudo vim /etc/wsl.conf
 ```
-and add 
+
+Add:
 
 ```bash
 [automount]
 options = "metadata,umask=22,fmask=11"
 ```
 
-after open 
+Then open:
 
 ```bash
 sudo vim /etc/fstab
 ```
-and add 
+
+Add:
 
 ```bash
 [automount]
 YOURDISC/FOLDER: YOURPATH drvfs defaults 0 0
 ```
-
 
 ## Initial setup
 
@@ -83,7 +84,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
 
-Edit the "~/.zshrc" file:
+Edit "~/.zshrc":
 
 ```bash
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -91,7 +92,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 ### Configure PowerLevel10K
 
-Restart Hyper, and you should see the PowerLevel10K configuration process. If not, run:
+Restart Hyper or run:
 
 ```bash
 p10k configure
@@ -104,19 +105,19 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-Edit the "~/.zshrc" file:
+Edit "~/.zshrc":
 
 ```bash
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting web-search)
 ```
 
-Load the new plugins:
+Load new plugins:
 
 ```bash
 source ~/.zshrc
 ```
 
-### Setting dependencies for correct operation
+### Setting up dependencies
 
 ```bash
 brew install gcc
@@ -132,6 +133,6 @@ brew install nvim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
 
-During the installation of NvChad, answer "yes."
+During NvChad installation, answer "yes."
 
 Feel free to fork and adapt these dotfiles according to your preferences. Happy coding! 🚀
