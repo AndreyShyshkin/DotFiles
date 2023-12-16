@@ -44,7 +44,7 @@ sudo vim /etc/fstab
 Add:
 
 ```bash
-F: /home/dev/DevDisc drvfs defaults 0 0
+F: /home/dev/DevDisc drvfs defaults,metadata,uid=1000,gid=1000,umask=022 0 0
 ```
 
 ## Initial setup
