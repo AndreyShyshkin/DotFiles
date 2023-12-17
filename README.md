@@ -12,8 +12,7 @@ Optinal
 
 
 <details>
-  <summary>To customize the default directory, </summary>
-open `.bashrc`:
+  <summary>To customize the default directory, </summary>open `.bashrc`:
 
 ```bash
 vim .bashrc
