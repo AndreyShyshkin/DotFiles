@@ -8,7 +8,12 @@ To enable WSL 2:
 2. Check the WSL version using `wsl --set-version`. If it's 1, use `wsl --set-version 2`.
 3. After these steps, download any repository from the Microsoft Store.
 
-To customize the default directory, open `.bashrc`:
+Optinal
+
+
+<details>
+  <summary>To customize the default directory, </summary>
+open `.bashrc`:
 
 ```bash
 vim .bashrc
@@ -46,6 +51,8 @@ Add:
 ```bash
 F: /home/dev/DevDisc drvfs defaults,metadata,uid=1000,gid=1000,umask=022 0 0
 ```
+</details>
+
 
 ## Initial setup
 
