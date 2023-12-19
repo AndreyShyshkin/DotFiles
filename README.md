@@ -137,6 +137,4 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 rm -rf ~/.config/nvim/.git
 ```
 
-During NvChad installation, answer "yes."
-
 Feel free to fork and adapt these dotfiles according to your preferences. Happy coding! 🚀
