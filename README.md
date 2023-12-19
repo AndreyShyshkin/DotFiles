@@ -134,6 +134,7 @@ pip3 install virtualenv virtualenvwrapper
 ## Install and setup Neovim (nvim)
 
 ```bash
+brew install ripgrep
 brew install nvim
 git clone https://github.com/NvChad/NvChad ~/.config/nvim --depth 1 && nvim
 ```
