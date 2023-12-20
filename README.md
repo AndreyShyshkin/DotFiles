@@ -125,7 +125,7 @@ source ~/.zshrc
 ### Setting up dependencies
 
 ```bash
-brew install gcc c npm python3 ripgrep fd
+brew install gcc c npm python3 lazygit ripgrep fd
 pip3 install virtualenv virtualenvwrapper
 ```
 
