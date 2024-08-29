@@ -1,3 +1,3 @@
 # DotFiles
 
-nvim config https://github.com/AndreyShyshkin/DotFiles/tree/nvim
+nvim config [nvim](https://github.com/AndreyShyshkin/DotFiles/tree/nvim)
