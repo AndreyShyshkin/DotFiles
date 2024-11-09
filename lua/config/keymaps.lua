@@ -37,8 +37,8 @@ keymap.set("n", "<Leader>Q", ":qa<Return>", opts)
 keymap.set("i", "jj", "<Esc>", opts)
 
 -- File explorer with NvimTree
-keymap.set("n", "<Leader>e", ":NvimTreeFindFile<Return>", opts)
-keymap.set("n", "<Leader>t", ":NvimTreeToggle<Return>", opts)
+keymap.set("n", "<Leader>f", ":NvimTreeFindFile<Return>", opts)
+keymap.set("n", "<Leader>e", ":NvimTreeToggle<Return>", opts)
 
 -- Disable continuations
 keymap.set("n", "<Leader>o", "o<Esc>^Da", opts)
